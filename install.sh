@@ -22,6 +22,16 @@ sudo apt-get install libgtk-3-dev libgtk2.0-dev libqtwebkit4 libqt4-test libgl1-
 echo " " &&
 sudo apt-get install libxtst6 libpango1.0-0 hdf5-tools gconf2-common gvfs-bin gfortran xclip -y &&
 echo " " &&
+# Bot Specific?
+# sudo pip3 install pillow
+# sudo pip3 install numpy
+sudo apt-get install libopenjp2-7 -y &&
+sudo apt install libtiff -y &&
+sudo apt install libtiff5 -y &&
+# sudo apt-get install libatlas-base-dev
+# sudo apt-get install python3-pip
+# sudo pip3 install RPi.GPIO
+echo " " &&
 echo "Installing utilities ..." &&
 echo " " &&
 sudo apt-get install nodejs npm  tilix  figlet screen links2 elinks hddtemp lm-sensors pv -y &&
