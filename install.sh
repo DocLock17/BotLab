@@ -26,7 +26,7 @@ echo " " &&
 # sudo pip3 install pillow
 # sudo pip3 install numpy
 sudo apt-get install libopenjp2-7 -y &&
-sudo apt install libtiff -y &&
+#sudo apt install libtiff -y &&
 sudo apt install libtiff5 -y &&
 # sudo apt-get install libatlas-base-dev
 # sudo apt-get install python3-pip
@@ -63,10 +63,10 @@ echo " " &&
 echo "Installing jupyter configuration ..." &&
 echo " " &&
 jupyter-lab --generate-config -y &&
-echo "c.JupyterApp.open_browser = True" >> /home/pi/.jupyter/jupyter_notebook_config.py &&
+echo "c.JupyterApp.open_browser = False" >> /home/pi/.jupyter/jupyter_notebook_config.py &&
 echo "c.JupyterApp.allow_remote_access = True" >> /home/pi/.jupyter/jupyter_notebook_config.py &&
-echo "c.JupyterApp.ip = '10.0.0.201'" >> /home/pi/.jupyter/jupyter_notebook_config.py &&
-#echo "c.JupyterApp.ip = 'localhost'" >> /home/pi/.jupyter/jupyter_notebook_config.py &&
+# echo "c.JupyterApp.ip = '10.0.0.201'" >> /home/pi/.jupyter/jupyter_notebook_config.py &&
+echo "c.JupyterApp.ip = 'localhost'" >> /home/pi/.jupyter/jupyter_notebook_config.py &&
 echo "c.JupyterApp.port = 8888" >> /home/pi/.jupyter/jupyter_notebook_config.py &&
 echo "c.JupyterApp.password = ''" >> /home/pi/.jupyter/jupyter_notebook_config.py
 echo " " &&
