@@ -1,0 +1,17 @@
+Java: javascript.js
+Page: index.html
+Styles: style.css
+captureDirectory: sampleImages
+captureRate: 24
+captureStillOn: true
+emailPort: 587
+extractionDirectory: extraction/
+extractionThreshold: 1000
+inferIdentity: false
+notDelay: 300
+notificationAuth: NotifyMe1!
+notificationType: 0
+ownerEmail: notify.lockindustries@gmail.com
+programDirectory: /home/pi/CameraProject/
+senderEmail: notify.lockindustries@gmail.com
+smtpServer: smtp.gmail.com

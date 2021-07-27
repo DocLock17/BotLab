@@ -1,0 +1,142 @@
+// Installation Notes:
+
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+
+#sudo apt-get install libatlas-base-dev
+
+wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-armv7l.sh
+
+sudo md5sum Miniconda3-latest-Linux-armv7l.sh #Check md5: a01cbe45755d576c2bb9833859cf9fd7 
+
+sudo /bin/bash Miniconda3-latest-Linux-armv7l.sh # -> change default directory to /home/pi/miniconda3
+
+yes # -> add: export PATH="/home/pi/miniconda3/bin:$PATH" then manually add it cause this doesn't work
+# sudo nano ~/.bashrc
+
+sudo reboot now
+
+conda config --add channels rpi && conda create --name SmartLock3 python=3.6 -c conda-forge -y && source activate SmartLock3 && conda install anaconda-client numpy filelock flask requests imagesize freetype pandas pyopenssl yaml sympy boto3 cython scipy ipython h5py hdf5 -y && pip3 install cffi matplotlib jupyter ffmpeg httplib2 opencv-python pyglet tensorflow tensorflow-hub -y
+
+ jupyter 
+jupyter-notebook --generate-config
+
+
+$ jupyter notebook password
+Enter password:  ****
+Verify password: ****
+[NotebookPasswordApp] Wrote hashed password to /Users/you/.jupyter/ jupyter_notebook_config.json
+
+Run jupyter notebook --generate-config, a jupyter_notebook_config.py should be generated under /home/USERNAME/.jupyter/jupyter_notebook_config.py.
+
+c.NotebookApp.allow_password_change = True
+c.NotebookApp.password = u'your_copied_hash_password'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 8888
+c.NotebookApp.allow_remote_access = True
+
+
+To register JupyterHub as a system service, create the file /lib/systemd/system/jupyterhub.service and fill it with:
+
+[Unit] 
+Description=JupyterHub Service 
+After=multi-user.target  
+[Service] 
+User=root 
+ExecStart=/usr/local/bin/jupyterhub --config=/root/jupyterhub_config.py 
+Restart=on-failure  
+[Install] 
+WantedBy=multi-user.target
+
+
+Afterwards, run the following commands:
+sudo systemctl daemon-reload 
+sudo systemctl start jupyterhub 
+sudo systemctl enable jupyterhub 
+sudo systemctl status jupyterhub.service
+
+
+//exporting venv
+pip freeze > requirements.txt
+Then push the requirements.txt file to anywhere you want to deploy the code, and then just do what you did on dev machine -
+
+$ virtualenv <env_name>
+$ source <env_name>/bin/activate
+(<env_name>)$ pip install -r path/to/requirements.txt
+
+
+
+// Second attempt
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+
+python3 -m pip install --user --upgrade pip
+python3 -m pip install --user virtualenv
+mkdir testProject1
+cd testProject1/
+python3 -m venv env
+source env/bin/activate
+
+sudo apt install software-properties-common
+sudo apt-get install libatlas-base-dev nodejs npm tilix -y
+
+pip install numpy filelock flask requests imagesize pandas pyopenssl seaborn sympy boto3 cython scipy ipython h5py cffi matplotlib jupyter ffmpeg httplib2 opencv-python pyglet tensorflow tensorflow-hub
+
+pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl
+
+
+
+# Final Setup
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+sudo apt install software-properties-common -y
+sudo apt-get install libatlas-base-dev nodejs npm tilix -y
+sudo python3 -m pip install --user --upgrade pip
+sudo python3 -m pip install --user virtualenv
+mkdir testProject1
+cd testProject1/
+wget https://github.com/DocLock17/CameraProject/blob/main/enviromentSetup.txt
+python3 -m venv env
+source env/bin/activate
+pip install -r enviromentSetup.txt
+pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl
+
+
+
+c.JupyterApp.open_browser = True
+c.JupyterApp.allow_remote_access = True
+c.JupyterApp.ip = '10.0.0.201'
+c.JupyterApp.port = 8888
+c.JupyterApp.password = ''
+
+// additional notes
+pip3 install picamera
+pip3 install hdfs
+pip3 install readerwriterlock
+pip3 install requests
+pip3 install simpleaudio
+pip3 install Django
+pip3 install opencv-contrib-python
+pip3 install cvlib
+pip3 install imageio
+pip3 install tk
+pip3 install gpio
+pip3 install PyYaml
+pip3 install Docutils
+pip3 install keras
+pip3 install Theano
+pip3 install nltk
+pip3 install fire
+pip3 install arrow
+pip3 install flashtext
+pip3 install SQLAlchemy
+pip3 install Luminoth
+pip3 install beautifulsoup4
+pip3 install bokeh
+pip3 install Gensim
+pip3 install textblob
+
+
+
+
+
+
+
+

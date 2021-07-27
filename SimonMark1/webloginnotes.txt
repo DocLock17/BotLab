@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>HTML Forms are Cool!</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="email" placeholder="Email Address">
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit">
+    </form>
+  </body>
+</html>
+
+
+
+<!-- 
+<form method="post">
+-->
+
+
+# from http.server import HTTPServer, BaseHTTPRequestHandler
+# import ssl
+
+
+# httpd = HTTPServer(('10.0.0.201', 4443), BaseHTTPRequestHandler)
+
+# httpd.socket = ssl.wrap_socket (httpd.socket, 
+#                                 certfile="web/CA/server.pem", 
+#                                 server_side=True)
+
+# httpd.serve_forever()
+
+# openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes

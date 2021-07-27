@@ -1,0 +1,66 @@
+/* A general CSS sheet build from a very basic layout template */
+
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+}
+
+#main {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+}
+
+#main > article {
+    text-align: center;
+    background-color: #000000;
+    flex: 1;
+}
+
+#main > nav, 
+#main > aside {
+    flex: 0 0 15vw;
+    color: #000000;
+    background-color: #FFF8DC;
+}
+
+#main > nav {
+    order: -1;
+}
+
+header, footer, article, nav, aside {
+    padding: 1em;
+}
+
+header, footer {
+    vertical-align: middle;
+    text-align: center;
+    color: #FFF8DC;
+    background-color: #34455c;
+    max-height: 12vh;
+}
+
+
+/* #630b62 # myPurple
+
+## Classic html color hex
+
+#F5F5DC beige
+
+#FFF8DC cornsilk
+
+#7FFFD4 aguamarine <-- my teal
+
+#66CDAA medium aguamarine <-- my seafoam
+
+#008080 teal <-- my heather blue
+
+#4B0082 indigo 
+
+#8A2BE2 blueviolet <-- i would consider deep purple
+
+#2F4F4F darkslategrey <-- 
+
+#000000 black <-- LOL cause I am stupid */

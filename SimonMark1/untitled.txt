@@ -1,0 +1,187 @@
+def handleInput(self, fields):
+        print("Fields:", fields)
+        test = str(fields.get('notAdd'))
+        print("FieldsValue: ", test)
+        
+        if test=="['michael.c.locker@gmail.com']":
+            self.setOwnerEmail('michael.c.locker@gmail.com')
+            print("Notification Email Changed to: 'michael.c.locker@gmail.com' ")
+            
+        elif test=="['jamedaful@gmail.com']":
+            self.setOwnerEmail('jamedaful@gmail.com')
+            print("Notification Email Changed to: 'jamedaful@gmail.com' ")
+            
+        elif test=="['notify.lockindustries@gmail.com']":
+            self.setOwnerEmail('notify.lockindustries@gmail.com')
+            print("Notification Email Changed to: 'notify.lockindustries@gmail.com' ")
+            
+
+            
+            
+            
+            
+        elif test=="['CaptureOn']":
+            self.setCaptureStillOn(True)
+            print("Still Capturing is now turned on. ")
+            
+        elif test=="['CaptureOff']":
+            self.setCaptureStillOn(False)
+            print("Still Capturing is now turned off. ")
+            
+        elif test=="['rotation90']":
+            self.setRotation(False)
+            print("Rotation is now set to 90. ")
+            
+        elif test=="['rotation0']":
+            self.setRotation(False)
+            print("Rotation is now set to 0. ")
+            
+        elif test=="['rotation180']":
+            self.setRotation(False)
+            print("Rotation is now set to 180. ")
+            
+        elif test=="['rotation270']":
+            self.setRotation(False)
+            print("Rotation is now set to 270. ")
+
+        elif test=="['boltControlOn']":
+            self.setBoltControl(True)
+            print("Bolt Control is now turned on. ")
+            
+        elif test=="['boltControlOff']":
+            self.setBoltControl(False)
+            print("Bolt Control is now turned off. ")
+        
+##########        elif test=="['SaveSettings']":
+            print("Saving Settings . . . ")
+            self.saveSettings()
+            print("Saved!")
+            
+##########        elif test=="['ExtractImages']":
+            moCap.extractFiles(self.dataDirectory, self.captureDirectory, self.extractionDirectory)
+            moCap.imgNum = 0
+            print("Extracting Still Images. ")
+            
+##########        elif test=="['ServerShutdown']":
+            self.setShutdownFlag('x')
+            print("Server will shutdown")
+            
+##########        elif test=="['boltOpen']":
+            if (moCap.boltFlag == True):
+                noteMan.boltLog()
+                moCap.bolt = boltDriver(17)
+                moCap.boltTimerSet = time.perf_counter()
+                moCap.boltFlag = False
+                moCap.boltTimerComp = time.perf_counter()
+                print("Bolt open")
+            else:
+                print("Bolt Already Open")
+            
+        elif test=="['boltClosed']":
+            if (moCap.boltFlag == False):
+                if moCap.boltTimerComp-moCap.boltTimerSet >= userSettings.boltDelay:
+                    moCap.bolt.engage()
+                    moCap.boltFlag = True
+                    moCap.boltTimerSet = self.boltTimerComp
+                    moCap.bolt.destroy()
+                    print("Bolt Closed")
+                else:
+                    print("Time Out")
+            else:
+                print("Bolt Already Closed")
+     
+        # Capture Settings
+
+        self.captureRate = self.userSettingsDict['captureRate']
+        self.frameRate = self.userSettingsDict['frameRate']                              
+        self.rotation = self.userSettingsDict['rotation']
+        self.captureStillOn = self.userSettingsDict['captureStillOn']
+        self.extractionThreshold = self.userSettingsDict['extractionThreshold']
+
+
+        # Email Server Settings
+        self.emailPort = self.userSettingsDict['emailPort']
+        self.smtpServer =  self.userSettingsDict['smtpServer']
+        self.senderEmail = self.userSettingsDict['senderEmail']
+        
+
+        #Facial Recognition Settings
+        self.inferIdentity = self.userSettingsDict['inferIdentity'] <input type="radio">
+        self.idThres = self.userSettingsDict['idThres']     
+        self.turingThres = self.userSettingsDict['turingThres'] 
+        
+  
+        self.boltControl = self.userSettingsDict['boltControl']  <input type="radio">
+        self.boltDelay = self.userSettingsDict['boltDelay']
+        
+        self.networkAddress = self.userSettingsDict['networkAddress']   
+        self.networkPort = self.userSettingsDict['networkPort']  
+
+##########        self.shutdownFlag = 'R'
+                
+##########        elif test=="['SaveSettings']":
+            print("Saving Settings . . . ")
+            self.saveSettings()
+            print("Saved!")
+            
+##########        elif test=="['ExtractImages']":
+            moCap.extractFiles(self.dataDirectory, self.captureDirectory, self.extractionDirectory)
+            moCap.imgNum = 0
+            print("Extracting Still Images. ")
+            
+##########        elif test=="['ServerShutdown']":
+            self.setShutdownFlag('x')
+            print("Server will shutdown")
+            
+##########        elif test=="['boltOpen']":
+            if (moCap.boltFlag == True):
+                noteMan.boltLog()
+<input type="button">
+
+<input type="button" onclick="alert('Hello World!')" value="Open Bolt">
+<input type="button" onclick="alert('Hello World!')" value="Close Bolt">
+<input type="button" onclick="alert('Hello World!')" value="Shutdown Server">
+<input type="button" onclick="alert('Hello World!')" value="Extract Images"> 
+
+
+<input type="checkbox">
+
+
+
+
+
+# Notification Settings
+
+self.notDelay = self.userSettingsDict['notDelay']
+self.ownerEmail = self.userSettingsDict['ownerEmail']    <input type="email">
+
+
+
+
+
+self.notificationType = self.userSettingsDict['notificationType']
+
+elif test=="['NotificationMotion']":
+    self.setNotificationType(1)
+    print("Notifications are now set to motion. ")
+elif test=="['NotificationTuring']":
+    self.setNotificationType(2)
+    print("Notifications are now set to turing. ")
+elif test=="['NotificationOff']":
+    self.setNotificationType(0)
+    print("Notifications are now turned off. ")
+
+
+
+
+<input type="radio">
+
+<strong>Notification Selection:</strong><br>
+<input type="radio" id="Motion" name="NotificationSelection" value="Motion">
+<label for="Motion">Motion</label><br>
+<input type="radio" id="Turing" name="NotificationSelection" value="Turing">
+<label for="Turing">Turing</label><br>
+<input type="radio" id="Identity" name="NotificationSelection" value="Identity">
+<label for="Identity">Identity</label>
+<input type="radio" id="Off" name="NotificationSelection" value="Off">
+<label for="Off">Off</label>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Lock Cam</title>
+  </head>
+  <body>
+    <h1>Lock Cam Configuration and Monitoring Center</h1>
+      <img src="stream.mjpg" width="640" height="640" />
+    <br>
+    <form action="http://10.0.0.201:7777/" method='post'>
+      <strong>Notification Address:</strong><br>
+      <label for='notAdd'>Email: </label>
+        <input type='text' id="notAdd" name="notAdd"><br>
+        <input type="submit" value="Submit" />
+        <input type='reset'>
+    </form>
+  </body>
+</html>
+

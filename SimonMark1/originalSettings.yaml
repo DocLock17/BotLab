@@ -1,0 +1,34 @@
+# User Settings in a simple .yaml file
+
+# ProgramDirectory
+programDirectory: '/home/pi/CameraProject/'
+
+# Web Page Locations
+Page: 'index.html'
+Styles: 'style.css'
+Java: 'javascript.js'
+
+# Capture Settings
+captureStillOn: True
+captureDirectory: 'sampleImages'
+
+
+# Extraction Settings
+extractionDirectory: 'extraction/'
+extractionThreshold: 1000
+
+# Notification Settings
+notificationType: 0
+notDelay: 300 # 5 Minute
+#notDelay: 900 # 15 Minute
+#notDelay : 3600 # 1 Hour
+ownerEmail: 'notify.lockindustries@gmail.com'
+
+# Email Server Settings
+emailPort: 587  # For starttls
+smtpServer:  'smtp.gmail.com'
+senderEmail: 'notify.lockindustries@gmail.com'
+notificationAuth: 'NotifyMe1!'
+
+#Facial Recognition Settings
+inferIdentity: False

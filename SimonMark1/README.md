@@ -1,0 +1,3 @@
+# SimonRoverMark1
+
+Ok so this is currently basically a duplicate of my LockCam Repo however I expect the LockCam project to slow down (perhaps even to a stop) once the project achieves its goals.This project however, is the next iteration in that project. The first production Mark will be to improve the web interface and basic recognition sofware. The second aim will be to significantly improve the actual robotic control mechanisms which will allow for the advancement of other projects as well. However, where we expect to see the most advancement is in the Mark 3 phase where the goal will be to improve the underlying visual recognition in ways that allow us to create some interactivity and perhaps even build agent systems upon this framework.
